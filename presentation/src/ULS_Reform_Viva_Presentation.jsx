@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Home, TrendingUp, AlertCircle, CheckCircle, Database, BarChart3, GitBranch, FileText } from 'lucide-react';
+import { ChevronLeft, ChevronRight, TrendingUp, AlertCircle, CheckCircle, Database, BarChart3, GitBranch, FileText } from 'lucide-react';
 
 const VivaPresentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -1102,7 +1102,7 @@ const VivaPresentation = () => {
         </div>
 
         {/* Content Area */}
-        <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-8 min-h-[600px] mb-6 border border-gray-700">
+        <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-8 h-[600px] overflow-y-auto mb-6 border border-gray-700">
           {currentSlideData.content}
         </div>
 
@@ -1151,28 +1151,7 @@ const VivaPresentation = () => {
           </button>
         </div>
 
-        {/* Quick Navigation Menu */}
-        <div className="mt-6 bg-gray-800/50 p-4 rounded-lg">
-          <div className="flex items-center gap-2 mb-3">
-            <Home className="w-5 h-5 text-blue-400" />
-            <h3 className="font-semibold text-blue-300">Quick Navigation</h3>
-          </div>
-          <div className="grid grid-cols-4 gap-2 text-sm">
-            {slides.map((slide, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`p-2 rounded text-left transition-all ${
-                  index === currentSlide
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                }`}
-              >
-                {index + 1}. {slide.title.split(':')[0]}
-              </button>
-            ))}
-          </div>
-        </div>
+
       </div>
     </div>
   );
