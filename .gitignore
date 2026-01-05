@@ -33,3 +33,6 @@ Thumbs.db
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+
+# Windows Mark-of-the-Web metadata sidecars
+*:Zone.Identifier
