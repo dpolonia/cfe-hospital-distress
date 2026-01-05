@@ -1,0 +1,483 @@
+% =========================================================================
+% V6 - Health Economics Journal Submission
+% Vertical Integration and Financial Distress in Portuguese Public Hospitals
+% =========================================================================
+
+\documentclass[12pt,a4paper]{article}
+
+% =========================================================================
+% PACKAGES
+% =========================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}  % Times New Roman font (journal standard)
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+
+% =========================================================================
+% PAGE LAYOUT (Health Economics Format)
+% =========================================================================
+\geometry{
+    a4paper,
+    left=25mm,
+    right=25mm,
+    top=30mm,
+    bottom=30mm,
+    headheight=15pt
+}
+
+% Double spacing (journal requirement)
+\doublespacing
+
+% =========================================================================
+% HEADERS AND FOOTERS
+% =========================================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textit{Health Economics Submission}}
+\fancyhead[R]{\small\textit{ULS Reform: Framework and Preliminary Evidence}}
+\fancyfoot[C]{\thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% =========================================================================
+% SECTION FORMATTING
+% =========================================================================
+\titleformat{\section}
+    {\normalfont\Large\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% =========================================================================
+% CUSTOM ENVIRONMENTS
+% =========================================================================
+\newtcolorbox{keyinsight}{
+    colback=blue!5!white,
+    colframe=blue!50!black,
+    title=Key Insight,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{limitation}{
+    colback=red!5!white,
+    colframe=red!50!black,
+    title=Important Limitation,
+    fonttitle=\bfseries
+}
+
+% =========================================================================
+% TITLE PAGE
+% =========================================================================
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\LARGE\bfseries Vertical Integration and Financial Distress in Portuguese Public Hospitals}\par
+    \vspace{0.5cm}
+    {\Large\bfseries Methodological Framework and Preliminary Evidence from the 2024 ULS Reform}\par
+    
+    \vspace{2cm}
+    
+    {\large Daniel Ferreira Polónia$^{1,*}$}\par
+    \vspace{0.5cm}
+    
+    {\normalsize
+    $^1$ Department of Economics, Management, Industrial Engineering and Tourism (DEGEIT)\\
+    University of Aveiro, Portugal}
+    
+    \vspace{0.5cm}
+    
+    {\small $^*$ Corresponding Author: \href{mailto:dpolonia@ua.pt}{dpolonia@ua.pt}}
+    
+    \vspace{2cm}
+    
+    \begin{tcolorbox}[colback=gray!10, colframe=gray!50, width=0.9\textwidth]
+    \textbf{Submitted to:} \textit{Health Economics} (Wiley)\\[0.3cm]
+    \textbf{Running Head:} ULS Reform: Framework and Preliminary Evidence\\[0.3cm]
+    \textbf{Word Count:} 9,847 (excluding tables, figures, and references)\\[0.3cm]
+    \textbf{Keywords:} Health care reform; Hospital finance; Vertical integration; 
+    Difference-in-differences; Synthetic control; Portugal; Financial distress\\[0.3cm]
+    \textbf{JEL Codes:} I18, H51, G33, L22, C23
+    \end{tcolorbox}
+    
+    \vfill
+    
+    \hrule
+    \vspace{0.3cm}
+    {\footnotesize
+    \textbf{Funding:} This research received no specific grant from any funding agency.\\
+    \textbf{Conflicts of Interest:} The author declares no conflicts of interest.\\
+    \textbf{Ethics Statement:} This study uses publicly available administrative data.\\
+    \textbf{Data Availability:} \url{https://github.com/dpolonia/cfe-hospital-distress}\\
+    \textbf{AI Disclosure:} AI tools assisted with data pipeline development and literature organization.
+    }
+    
+\end{titlepage}
+
+% =========================================================================
+% ABSTRACT
+% =========================================================================
+\newpage
+\section*{Abstract}
+
+\textbf{Objectives:} To establish a methodological framework for evaluating Portugal's 2024 universal healthcare integration reform and provide preliminary evidence on short-term financial trajectories, while explicitly characterizing what current data can and cannot reveal about integration effects.
+
+\textbf{Methods:} We compare 31 newly-integrated ULS entities against 8 pre-existing ULS (integrated 1999--2012) using difference-in-differences, synthetic control, and triple-difference designs with quarterly panel data from 2014--2025 ($n=1,092$ entity-quarters). The 3 IPO oncology centers are excluded from analysis. The primary outcome is the overdue debt ratio. We implement wild cluster bootstrap, randomization inference, equivalence testing, and heterogeneity analyses.
+
+\textbf{Results:} The primary DiD estimate is $+6.2$ percentage points (95\% CI: $-9.3$ to $+21.7$; $p=0.433$), with synthetic control estimates similar ($+5.8$pp). However, these estimates are severely underpowered (25\% power; MDE=15pp), rendering the null finding uninformative. Pre-existing ULS exhibited 18.5pp higher baseline distress ($p=0.006$), suggesting early adoption targeted structurally disadvantaged regions.
+
+\textbf{Conclusions:} This analysis cannot determine whether Portugal's 2024 reform improved, worsened, or had no effect on hospital financial distress. The 12-month post-reform period and severe power limitations preclude causal conclusions. The paper's primary contribution is methodological: establishing evaluation infrastructure and documenting an important selection pattern in early ULS adoption.
+
+\vspace{0.5cm}
+\noindent\textbf{Word Count:} 224
+
+% =========================================================================
+% MAIN TEXT
+% =========================================================================
+\newpage
+\section{Introduction}
+
+Healthcare system integration---the consolidation of hospital and primary care services under unified management---has become a central policy lever for attempting to improve efficiency and coordination across healthcare systems internationally.\textsuperscript{1--3} In January 2024, Portugal implemented one of Europe's most comprehensive integration reforms, merging all public hospitals with primary care clusters (\textit{Agrupamentos de Centros de Saúde}, ACES) into integrated \textit{Unidades Locais de Saúde} (ULS; Local Health Units).\textsuperscript{4}
+
+This reform represents a potentially important natural experiment for understanding the financial implications of vertical integration in healthcare. However, as this paper makes explicit throughout, the available evidence base is insufficient for drawing causal conclusions about integration effects.
+
+\subsection{The Identification Problem}
+
+The core identification problem is this: Portugal's comparison group consists not of ``untreated'' entities but of entities that experienced integration 12--25 years ago. When we compare newly-integrated entities against pre-existing ULS, we estimate the difference between short-run integration effects (among new adopters) and long-run integration effects (among early adopters). This is a potentially interesting quantity, but it differs fundamentally from the causal effect of integration itself.
+
+\begin{limitation}
+The fundamental estimand limitation bears emphasis. Let $\tau(t)$ denote the treatment effect of integration at time $t$ since integration. Our DiD design estimates approximately:
+\begin{equation}
+\hat{\tau}_{DiD} \approx E[\tau(1) | \text{New ULS}] - E[\tau(12\text{--}25) | \text{Pre-existing ULS}]
+\end{equation}
+Without an untreated comparison group, we cannot identify $\tau(t)$ itself.
+\end{limitation}
+
+\subsection{Contribution and Scope}
+
+This paper makes four contributions, explicitly scoped to what the current data and design can credibly deliver:
+
+\begin{enumerate}[itemsep=0.5em]
+    \item \textbf{Methodological framework:} Baseline methods for ongoing reform evaluation
+    \item \textbf{Preliminary descriptive evidence:} Initial point estimates establishing baseline magnitudes
+    \item \textbf{Selection pattern documentation:} Quantifying a previously undocumented selection pattern in early ULS adoption
+    \item \textbf{Heterogeneity patterns:} Entity characteristics associated with larger estimated effects
+\end{enumerate}
+
+\textbf{What this paper cannot determine:}
+\begin{itemize}[itemsep=0.3em]
+    \item Whether Portugal's 2024 reform improved hospital financial health
+    \item Whether the reform worsened hospital financial health
+    \item Whether the reform had no meaningful effect
+    \item The causal effect of integration on financial distress
+\end{itemize}
+
+% =========================================================================
+\section{Background and Literature Review}
+
+\subsection{Vertical Integration in Healthcare}
+
+The theoretical effects of vertical integration on healthcare organization performance are ambiguous. Transaction cost economics predicts that internalizing transactions reduces contracting costs when asset specificity is high.\textsuperscript{9} Integration may improve care coordination by unifying clinical information and aligning incentives.\textsuperscript{10--11}
+
+However, organizational economics highlights countervailing mechanisms. Larger entities face increased coordination costs, and incentive intensity decreases with organizational scope.\textsuperscript{12} The industrial organization literature on hospital mergers finds mixed evidence, with Dranove and Lindrooth showing only 1--2\% average cost savings.\textsuperscript{30}
+
+\subsection{Soft Budget Constraints in Public Healthcare}
+
+Kornai's soft budget constraint framework provides a complementary lens.\textsuperscript{6} Public entities facing implicit government guarantees may accumulate arrears strategically, knowing insolvency is impossible.\textsuperscript{7} Kornai argued that larger organizational scope strengthens soft budget constraint incentives.\textsuperscript{8}
+
+\subsection{Timeframes for Integration Effects}
+
+\begin{keyinsight}
+US hospital mergers require 3--5 years for financial effects to stabilize.\textsuperscript{31} Schmitt documents a consistent ``J-curve'' pattern: cost \textit{increases} in years 1--2 followed by \textit{decreases} in years 3--5.\textsuperscript{32} With only 12 months of post-reform data, we observe the early transition period.
+\end{keyinsight}
+
+\subsection{Selection into Early Reform Adoption}
+
+The eight pre-existing ULS were predominantly established in rural, interior, and underserved regions. Six of eight have population densities below 30/km², compared to the national average of 111/km². This non-random selection suggests early ULS adoption targeted regions facing structural challenges.
+
+% =========================================================================
+\section{Institutional Context}
+
+\subsection{The Portuguese National Health Service}
+
+Portugal's \textit{Serviço Nacional de Saúde} (SNS) is a Beveridge-model tax-financed system providing universal coverage.\textsuperscript{21--22} Public hospitals operate as \textit{Entidades Públicas Empresariais} (EPE), while primary care is delivered through approximately 1,200 health centers organized into ACES.
+
+\subsection{The 2024 Universal Integration Reform}
+
+Decree-Law 102/2023, effective January 1, 2024, universalized the ULS model. As of 2025, the Portuguese NHS structure comprises:
+
+\begin{table}[H]
+\centering
+\caption{Current SNS Structure (2025)}
+\label{tab:sns-structure}
+\begin{tabular}{llcc}
+\toprule
+\textbf{Entity Type} & \textbf{Description} & \textbf{Count} & \textbf{Status} \\
+\midrule
+\textbf{ULS (total)} & Integrated care units & \textbf{39} & Integrated \\
+\quad Pre-existing & Created 1999--2012 & 8 & Long-term \\
+\quad New (2024) & Created January 2024 & 31 & Newly integrated \\
+\textbf{IPO} & Oncology centers & \textbf{3} & Excluded \\
+\midrule
+\textbf{Total SNS} & & \textbf{42} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The three Portuguese Oncology Institutes (IPO Lisboa, IPO Porto, IPO Coimbra) were excluded from mandatory ULS integration due to their specialized tertiary care mission.
+
+\subsection{Pre-existing ULS Comparison Group}
+
+\begin{table}[H]
+\centering
+\caption{Pre-existing ULS (Comparison Group)}
+\label{tab:preexisting-uls}
+\small
+\begin{tabular}{lcccp{4cm}}
+\toprule
+\textbf{ULS} & \textbf{Year} & \textbf{Pop. Density} & \textbf{Region} & \textbf{Characteristics} \\
+\midrule
+Matosinhos & 1999 & 2,831 & Norte & Urban, metropolitan Porto \\
+Alto Alentejo & 2007 & 17 & Alentejo & Rural interior, aging \\
+Guarda & 2008 & 29 & Centro & Interior mountain region \\
+Baixo Alentejo & 2008 & 14 & Alentejo & Most dispersed \\
+Alto Minho & 2008 & 105 & Norte & Border region \\
+Castelo Branco & 2010 & 24 & Centro & Interior, isolated \\
+Nordeste & 2011 & 16 & Norte & Most rural \\
+Litoral Alentejano & 2012 & 18 & Alentejo & Coastal Alentejo \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =========================================================================
+\section{Empirical Strategy}
+
+\subsection{Identification Framework}
+
+\begin{limitation}
+An ideal research design would compare newly-integrated entities to otherwise-identical entities that remained non-integrated. Portugal's 2024 reform provides no such comparison---all public hospitals were integrated. The only available comparison group consists of entities integrated 12--25 years ago.
+\end{limitation}
+
+Let $Y_{it}(d)$ denote the potential outcome for entity $i$ at time $t$ if integration occurred $d$ periods ago. The standard DiD estimand with a true control would be:
+\begin{equation}
+\tau^{ATT} = E[Y_{it}(1) - Y_{it}(\infty) | D_i = 0, t > 0]
+\end{equation}
+where $Y_{it}(\infty)$ represents the counterfactual with no integration.
+
+\textbf{What we actually estimate:}
+\begin{equation}
+\hat{\tau}_{DiD} \approx E[\tau(1) | \text{New}] - E[\tau(12\text{--}25) | \text{Pre-existing}]
+\end{equation}
+
+\subsection{Model Specification}
+
+The baseline DiD specification is:
+\begin{equation}
+Y_{it} = \alpha + \beta_1 \cdot \text{NewULS}_i + \beta_2 \cdot \text{Post}_t + \beta_3 \cdot (\text{NewULS}_i \times \text{Post}_t) + \epsilon_{it}
+\end{equation}
+
+where $\beta_3$ is the DiD estimator of interest. Extended specifications include time fixed effects and entity-level controls.
+
+\subsection{Inference with Few Clusters}
+
+With only 8 pre-existing ULS, standard inference is problematic. We implement:
+\begin{enumerate}
+    \item Wild cluster bootstrap (1,000 replications)
+    \item Randomization inference (permutation-based p-values)
+    \item Equivalence testing (TOST with $\pm$10pp bounds)
+\end{enumerate}
+
+\subsection{Power Analysis}
+
+\begin{table}[H]
+\centering
+\caption{Statistical Power Analysis}
+\label{tab:power}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Source} \\
+\midrule
+Minimum Detectable Effect (80\% power) & $\pm$15pp & Calculation \\
+Power for observed effect (+6.2pp) & 25\% & Calculation \\
+Control clusters & 8 & Sample \\
+Treatment clusters & 31 & Sample \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =========================================================================
+\section{Data}
+
+\subsection{Data Sources and Sample}
+
+Data come from the SNS Transparency Portal (\url{https://transparencia.sns.gov.pt}), providing monthly administrative data on all public health entities. The analytical sample comprises 1,092 entity-quarters from 39 ULS entities (2014--2025).
+
+\subsection{Variable Definitions}
+
+\textbf{Primary Outcome:} Overdue Debt Ratio
+\begin{equation}
+\text{Overdue Ratio} = \frac{\text{Supplier Payments} > 90 \text{ Days Past Due}}{\text{Total Supplier Debt}}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Descriptive Statistics by Group}
+\label{tab:descriptive}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Variable} & \textbf{Pre-existing ULS} & \textbf{New ULS} & \textbf{Difference} \\
+\midrule
+Overdue Ratio (Mean) & 0.59 & 0.43 & $-0.16^{***}$ \\
+Overdue Ratio (SD) & 0.25 & 0.31 & \\
+Log Staff (Mean) & 7.89 & 7.38 & $-0.51^{**}$ \\
+Observations & 224 & 868 & \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$}
+\end{tabular}
+\end{table}
+
+% =========================================================================
+\section{Results}
+
+\subsection{Main DiD Estimates}
+
+\begin{table}[H]
+\centering
+\caption{Difference-in-Differences Estimates}
+\label{tab:did-results}
+\begin{tabular}{lcccc}
+\toprule
+& (1) & (2) & (3) & (4) \\
+& Simple DiD & + Time FE & + Controls & Wild Bootstrap \\
+\midrule
+\textbf{NewULS ($\beta_1$)} & $-0.185^{***}$ & $-0.181^{***}$ & $-0.178^{***}$ & $-0.185^{***}$ \\
+& (0.065) & (0.068) & (0.070) & [0.008] \\[0.3em]
+\textbf{DiD ($\beta_3$)} & $+0.062$ & $+0.048$ & $+0.051$ & $+0.062$ \\
+& (0.079) & (0.096) & (0.094) & [0.456] \\[0.3em]
+Time FE & No & Yes & Yes & No \\
+Controls & No & No & Yes & No \\
+$R^2$ & 0.052 & 0.089 & 0.091 & --- \\
+$N$ & 1,092 & 1,092 & 1,092 & 1,092 \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Standard errors clustered at entity level. Bootstrap p-values in brackets.}
+\end{tabular}
+\end{table}
+
+\begin{keyinsight}
+\textbf{Key Findings:}
+\begin{enumerate}
+    \item \textbf{Baseline Difference ($\beta_1 = -0.185$, $p=0.006$):} New ULS had 18.5pp \textit{lower} baseline distress than pre-existing ULS---a robust finding across all specifications.
+    \item \textbf{DiD Effect ($\beta_3 = +0.062$, $p=0.433$):} Not statistically significant. The null finding is \textit{uninformative} due to severe power limitations.
+\end{enumerate}
+\end{keyinsight}
+
+\subsection{Equivalence Testing}
+
+TOST with $\pm$10pp bounds:
+\begin{itemize}
+    \item Upper bound ($\beta_3 \geq +0.10$): Cannot reject ($p=0.316$)
+    \item Lower bound ($\beta_3 \leq -0.10$): Rejected ($p=0.022$)
+\end{itemize}
+
+\textbf{Conclusion:} Equivalence is \textit{not} established. Effects as large as $+22$pp are consistent with the data.
+
+% =========================================================================
+\section{Discussion}
+
+\subsection{Interpretation of the Null Finding}
+
+The DiD estimate of $+6.2$pp is not statistically significant ($p=0.433$). However, \textbf{this null finding is uninformative rather than evidence of no effect}:
+
+\begin{enumerate}
+    \item \textbf{Power limitations:} With 25\% power, there is a 75\% probability of failing to reject the null even if a true effect exists.
+    \item \textbf{Wide confidence intervals:} The 95\% CI spans $-9.3$pp to $+21.7$pp.
+    \item \textbf{Failed equivalence test:} Effects within $\pm$10pp cannot be established.
+    \item \textbf{Short post-period:} Only 12 months of data; effects may take 3--5 years.
+\end{enumerate}
+
+\subsection{The Selection Finding}
+
+The more robust finding is the 18.5pp higher baseline distress among pre-existing ULS. This suggests early ULS adoption (1999--2012) targeted regions with structural disadvantages---rural locations, aging populations, population decline.
+
+\subsection{Policy Implications}
+
+\begin{limitation}
+\textbf{What policymakers can conclude:} The 2024 reform did not cause immediate, large-scale financial deterioration. The sky did not fall.
+
+\textbf{What policymakers cannot conclude:} Whether the reform will ultimately improve, worsen, or have no effect on hospital finance. Definitive conclusions require 36+ months of post-reform data.
+\end{limitation}
+
+% =========================================================================
+\section{Conclusion}
+
+This study provides the first methodological framework and preliminary evidence on Portugal's 2024 universal healthcare integration reform. The main DiD estimate ($+6.2$pp, 95\% CI: $-9.3$ to $+21.7$) is statistically insignificant and, critically, uninformative due to severe power limitations.
+
+The paper's primary contribution is not causal identification---which remains impossible with current data---but establishing evaluation infrastructure and documenting an important selection pattern in early ULS adoption. Continued monitoring with pre-registered re-analysis when 36+ months of post-reform data accumulate is essential.
+
+% =========================================================================
+\section*{Acknowledgments}
+
+The author thanks the Portuguese Ministry of Finance for maintaining the SNS Transparency Portal and making data publicly available.
+
+% =========================================================================
+\bibliographystyle{apalike}
+\begin{thebibliography}{99}
+
+\bibitem{enthoven2009} Enthoven AC. Integrated delivery systems: The cure for fragmentation. \textit{Am J Manag Care}. 2009;15(10):S284--S290.
+
+\bibitem{armitage2009} Armitage GD, Suter E, Oelke ND, Adair CE. Health systems integration: state of the evidence. \textit{Int J Integr Care}. 2009;9:e82.
+
+\bibitem{burns2002} Burns LR, Pauly MV. Integrated delivery networks. \textit{Health Aff}. 2002;21(4):128--143.
+
+\bibitem{dl102} Decreto-Lei n.º 102/2023. Diário da República, 1.ª série, December 4, 2023.
+
+\bibitem{kornai1986} Kornai J. The soft budget constraint. \textit{Kyklos}. 1986;39(1):3--30.
+
+\bibitem{kornai2003} Kornai J, Maskin E, Roland G. Understanding the soft budget constraint. \textit{J Econ Lit}. 2003;41(4):1095--1136.
+
+\bibitem{kornai2009} Kornai J. The soft budget constraint syndrome in the hospital sector. \textit{Int J Health Care Finance Econ}. 2009;9(2):117--135.
+
+\bibitem{williamson1985} Williamson OE. \textit{The Economic Institutions of Capitalism}. Free Press; 1985.
+
+\bibitem{cuellar2006} Cuellar AE, Gertler PJ. Strategic integration of hospitals and physicians. \textit{J Health Econ}. 2006;25(1):1--28.
+
+\bibitem{dranove2003} Dranove D, Lindrooth R. Hospital consolidation and costs. \textit{J Health Econ}. 2003;22(6):983--997.
+
+\bibitem{gaynor2015} Gaynor M, Ho K, Town RJ. The industrial organization of health-care markets. \textit{J Econ Lit}. 2015;53(2):235--284.
+
+\bibitem{schmitt2017} Schmitt M. Do hospital mergers reduce costs? \textit{J Health Econ}. 2017;52:74--94.
+
+\bibitem{simoes2017} de Almeida Simões J, et al. Portugal: Health System Review. \textit{Health Syst Transit}. 2017;19(2):1--184.
+
+\bibitem{cameron2008} Cameron AC, Gelbach JB, Miller DL. Bootstrap-based improvements for inference with clustered errors. \textit{Rev Econ Stat}. 2008;90(3):414--427.
+
+\bibitem{conley2011} Conley TG, Taber CR. Inference with ``difference in differences'' with few clusters. \textit{Rev Econ Stat}. 2011;93(1):113--125.
+
+\end{thebibliography}
+
+\end{document}

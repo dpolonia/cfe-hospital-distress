@@ -1,0 +1,259 @@
+[
+  {
+    "reviewer": "Reviewer 1: Econometrics Specialist (GPT-4o)",
+    "recommendation": "ACCEPT_WITH_MAJOR_REVISIONS",
+    "overall_score": 15.8,
+    "summary_assessment": "The paper addresses a timely and policy-relevant question regarding the financial impact of healthcare integration in Portugal. While the methodological transparency and replicability are commendable, significant issues with identification, statistical power, and short observation periods limit the causal claims. Major revisions are needed to strengthen the theoretical framework and empirical strategy.",
+    "main_contribution": "The paper establishes baseline methods and provides preliminary evidence on the financial impact of Portugal's 2024 healthcare integration reform.",
+    "fatal_flaws": [
+      "Fundamental identification problem with pre-existing ULS as 'differently treated' rather than 'untreated' units.",
+      "Severe underpowering (~25% power) makes null findings uninformative.",
+      "Short post-reform period (12 months) is insufficient to detect organizational effects."
+    ],
+    "criteria_scores": {
+      "research_question": {
+        "score": 18,
+        "strengths": "The research question is original, significant, and clearly stated, addressing a timely policy issue.",
+        "weaknesses": "The scope of the question may be overly ambitious given the data limitations.",
+        "specific_improvement": "Reframe the question to focus on establishing baseline methods rather than definitive causal impacts."
+      },
+      "literature_review": {
+        "score": 16,
+        "strengths": "Good coverage of relevant literature, including integration effects and European comparators.",
+        "weaknesses": "Could be more comprehensive in discussing the limitations of existing studies.",
+        "specific_improvement": "Extend the review to include more on the challenges of causal inference in similar reforms."
+      },
+      "theoretical_framework": {
+        "score": 14,
+        "strengths": "Provides a basic framework with clear hypotheses.",
+        "weaknesses": "Lacks depth in linking theoretical predictions to empirical measures.",
+        "specific_improvement": "Strengthen the framework by explicitly linking hypotheses to expected magnitudes and timing of effects."
+      },
+      "methodology_design": {
+        "score": 12,
+        "strengths": "Employs multiple inference methods and acknowledges limitations.",
+        "weaknesses": "Fundamental identification issues and insufficient power.",
+        "specific_improvement": "Implement alternative identification strategies such as synthetic control or triple-difference."
+      },
+      "data_quality": {
+        "score": 17,
+        "strengths": "Good data selection and handling with detailed documentation.",
+        "weaknesses": "Limited by short post-reform period.",
+        "specific_improvement": "Consider extending the dataset as more post-reform data becomes available."
+      },
+      "empirical_analysis": {
+        "score": 13,
+        "strengths": "Basic analysis with multiple methods.",
+        "weaknesses": "Underpowered analysis limits the informativeness of results.",
+        "specific_improvement": "Conduct a formal power analysis and integrate findings into the interpretation."
+      },
+      "results_interpretation": {
+        "score": 14,
+        "strengths": "Good transparency about limitations and implications.",
+        "weaknesses": "Interpretation is limited by weak identification and power issues.",
+        "specific_improvement": "Reframe interpretations to emphasize preliminary nature and guide future research."
+      },
+      "replicability": {
+        "score": 19,
+        "strengths": "Fully replicable with clear documentation and open data.",
+        "weaknesses": "None significant.",
+        "specific_improvement": "Maintain and update the replication materials as new data becomes available."
+      },
+      "writing_quality": {
+        "score": 16,
+        "strengths": "Well-structured and clear academic writing.",
+        "weaknesses": "Some sections could be more concise.",
+        "specific_improvement": "Streamline the introduction and background sections for clarity."
+      },
+      "ai_tools_usage": {
+        "score": 15,
+        "strengths": "Appropriate and transparent use of AI tools for data pipeline and literature synthesis.",
+        "weaknesses": "Limited integration of AI in analytical processes.",
+        "specific_improvement": "Explore further AI applications in data analysis and visualization."
+      }
+    },
+    "priority_revisions": [
+      "Revision 1: Address the fundamental identification problem by implementing alternative identification strategies.",
+      "Revision 2: Conduct a formal power analysis and integrate its implications into the results interpretation.",
+      "Revision 3: Extend the theoretical framework to include explicit hypotheses about effect magnitudes and timing."
+    ],
+    "minor_comments": [
+      "Clarify the selection criteria for the pre-existing ULS.",
+      "Provide more detail on the synthetic control method implementation.",
+      "Consider discussing potential policy implications in more depth given the current evidence limitations."
+    ]
+  },
+  {
+    "reviewer": "Reviewer 2: Healthcare Finance Expert (Claude Opus 4.5)",
+    "recommendation": "ACCEPT_WITH_MAJOR_REVISIONS",
+    "overall_score": 14.3,
+    "summary_assessment": "This revised manuscript represents a thoughtful response to first-round concerns, particularly in reframing the contribution and acknowledging limitations. The methodological infrastructure is commendable, and the transparency about statistical constraints is exemplary for the field. However, the fundamental identification problem remains unresolved\u2014pre-existing ULS as controls are conceptually problematic\u2014and the paper still overpromises relative to what the empirical design can credibly deliver.",
+    "main_contribution": "The paper establishes a methodological baseline for evaluating Portugal's 2024 healthcare integration reform while documenting a previously unrecognized selection pattern in early ULS adoption that has important implications for policy interpretation.",
+    "fatal_flaws": [
+      "The identification strategy remains fundamentally compromised: pre-existing ULS (created 12-25 years ago) are 'long-run treated' units, not 'untreated' controls, making the DiD estimand unclear\u2014the paper estimates the difference between short-run and long-run integration effects, not the effect of integration per se.",
+      "The paper is truncated mid-section (cuts off at 'The selection pattern'), preventing full evaluation of results, heterogeneity analyses, and policy implications\u2014essential components for assessing the contribution.",
+      "With only 7 control units and 25% statistical power, the inferential framework cannot distinguish between null effects, small positive effects, and small negative effects, yet the paper still draws policy-relevant conclusions from these uninformative results."
+    ],
+    "criteria_scores": {
+      "research_question": {
+        "score": 15,
+        "strengths": "Policy-relevant question with excellent timing. The reframing as 'baseline methods and preliminary evidence' is appropriate given limitations. Clear articulation of what the paper can and cannot deliver.",
+        "weaknesses": "The research question still implicitly promises causal inference ('financial impact of Portugal's 2024 reform') while the design cannot deliver this. The distinction between 'short-term adjustment effects' and 'steady-state effects' is introduced but not operationalized in the research design.",
+        "specific_improvement": "Reformulate the primary research question explicitly as: 'What is the difference in financial distress trajectories between newly-integrated and long-integrated healthcare entities in the first year following Portugal's 2024 reform?' This honest framing clarifies that you're comparing two treated groups at different integration stages, not estimating the causal effect of integration."
+      },
+      "literature_review": {
+        "score": 15,
+        "strengths": "Excellent addition of integration timing literature (Gaynor et al., Schmitt, Kristensen) that directly informs interpretation. European comparators section adds valuable context. The soft budget constraint framework is well-integrated.",
+        "weaknesses": "Missing critical literature on selection into early adoption of healthcare reforms\u2014why did certain regions adopt ULS early? The Spanish, Swedish, and Danish comparisons are superficial (one sentence each) and lack the depth needed to inform Portuguese expectations. No discussion of identification strategies used in the cited merger studies.",
+        "specific_improvement": "Add a subsection on 'Selection into Healthcare Reform Pilots' drawing on the policy diffusion and early adopter literatures. For European comparators, provide specific effect sizes from these studies (e.g., 'Danish consolidations achieved X% cost reduction after Y years') to benchmark your expected effect magnitudes. Discuss how Gaynor et al. and Dranove-Lindrooth addressed identification challenges and what lessons apply to your setting."
+      },
+      "theoretical_framework": {
+        "score": 14,
+        "strengths": "The four explicit hypotheses with predicted magnitudes represent substantial improvement. The efficiency-complexity-soft budget constraint trichotomy provides clear structure. Recognition that short-term and long-term effects may differ (Hypothesis 4) is theoretically grounded.",
+        "weaknesses": "The theoretical predictions are not mutually exclusive\u2014multiple mechanisms likely operate simultaneously\u2014yet the hypotheses are framed as alternatives. The magnitude predictions (3-8pp, 2-5pp, 10-15pp) are asserted rather than derived from Portuguese institutional features. No theory guides why pre-existing ULS might exhibit higher baseline distress (selection vs. treatment effect).",
+        "specific_improvement": "Develop a composite theoretical prediction: 'Given Portuguese institutional features X, Y, Z, the net short-term effect is predicted to be [range] because [mechanism A] dominates [mechanism B] during transition periods.' Add explicit theoretical reasoning for why early-adopter regions (rural, underserved) were selected\u2014was integration seen as a solution to their structural problems? This selection mechanism should inform your interpretation of baseline differences."
+      },
+      "methodology_design": {
+        "score": 13,
+        "strengths": "The combination of DiD and synthetic control is appropriate. Wild cluster bootstrap and randomization inference address small-cluster inference concerns. Equivalence testing is a valuable addition. The event-study specification enables assessment of parallel trends.",
+        "weaknesses": "The fundamental identification problem is acknowledged but not adequately addressed. Synthetic control using pre-2024 characteristics cannot solve the problem that the 'donor pool' consists only of long-treated units. The heterogeneity analyses are described in the abstract but the truncated paper doesn't show them. No formal pre-registration or pre-analysis plan is mentioned.",
+        "specific_improvement": "Consider a triple-difference design: compare newly-integrated entities to pre-existing ULS, but add a third difference using hospital characteristics (size, specialty mix, financial health) that predict integration benefits. Alternatively, use the synthetic control method to match on pre-reform distress trajectories rather than just characteristics\u2014if parallel trends hold in levels, this strengthens the design. Acknowledge explicitly that your estimand is ATT(short-run integration | already have long-run integration as comparison) which differs from ATT(integration | no integration)."
+      },
+      "data_quality": {
+        "score": 16,
+        "strengths": "The quarterly panel from 2014-2025 provides substantial pre-reform data for parallel trends assessment. The overdue debt ratio is well-suited for public sector distress measurement. Data dictionary with Portuguese legal references is excellent. API-based extraction enhances reproducibility.",
+        "weaknesses": "Only 12 months post-reform is severely limiting (acknowledged). The paper doesn't discuss potential data quality issues during the reform transition (e.g., were reporting systems disrupted? were there definitional changes?). Sample size (n=1,424 entity-quarters) is modest for the complexity of specifications described.",
+        "specific_improvement": "Add a data quality assessment section addressing: (1) Were there any changes to reporting requirements or definitions coinciding with the 2024 reform? (2) What is the rate of missing or implausible values in the post-reform period vs. pre-reform? (3) Are there any entities with suspicious data patterns (e.g., exactly zero overdue debt) that might indicate reporting artifacts?"
+      },
+      "empirical_analysis": {
+        "score": 14,
+        "strengths": "The multi-inference approach (clustered SE, wild bootstrap, randomization inference) is methodologically sophisticated. Power analysis with explicit MDE calculation is exemplary transparency. Event-study plus DiD plus synthetic control provides triangulation.",
+        "weaknesses": "Cannot evaluate the actual analysis because the paper is truncated. The described heterogeneity analyses (size, region type, pre-reform health) are potentially informative but results are only briefly mentioned in abstract. The 25% power means the study is essentially uninformative about effects smaller than 15pp\u2014this should more prominently shape the entire analytical strategy.",
+        "specific_improvement": "Given severe power limitations, restructure the empirical section around heterogeneity rather than average effects. With 47 newly-integrated entities, there is potential for detecting effects in subgroups even if the average effect is underpowered. Consider a machine learning approach (causal forest) to identify which entity characteristics predict larger integration effects\u2014this exploratory analysis could inform future research design even if not causally identified."
+      },
+      "results_interpretation": {
+        "score": 12,
+        "strengths": "The abstract appropriately hedges conclusions. The acknowledgment that results 'cannot yet determine causal effects' is intellectually honest. The integration of power limitations into interpretation is good practice.",
+        "weaknesses": "Cannot fully evaluate because results section is truncated. The abstract reports the baseline difference (18.5pp higher for pre-existing ULS) as 'significant' but this finding is actually the most interpretable result\u2014it deserves much more attention. The policy implications mentioned ('recommend continued monitoring') are generic.",
+        "specific_improvement": "Elevate the baseline difference finding to the primary result. This selection pattern tells us something important about early ULS adoption that has not been documented elsewhere. Develop a structured interpretation: 'The baseline difference could reflect (a) selection of disadvantaged regions into early integration, (b) long-run effects of integration, or (c) some combination. Evidence favoring interpretation (a) includes...' This is more valuable than the underpowered DiD estimate."
+      },
+      "replicability": {
+        "score": 18,
+        "strengths": "GitHub repository with raw data, cleaning scripts, and analysis code is excellent. Data dictionary with Portuguese legal references enables understanding of variable definitions. API extraction code enhances reproducibility. Clear documentation standards.",
+        "weaknesses": "Cannot verify completeness because paper is truncated. No mention of specific software versions or random seeds for bootstrap procedures. The data dictionary is referenced but not shown.",
+        "specific_improvement": "Add a replication appendix with: (1) complete software environment (R/Stata version, package versions), (2) random seeds for all stochastic procedures, (3) runtime estimates for computationally intensive procedures (bootstrap, randomization inference). Consider containerization (Docker) for full computational reproducibility."
+      },
+      "writing_quality": {
+        "score": 15,
+        "strengths": "Clear structure with appropriate signposting. Technical material is accessible without sacrificing precision. Tables are well-formatted. The distinction between what the paper can and cannot deliver is clearly communicated.",
+        "weaknesses": "The paper is truncated mid-sentence ('The selection pattern'), which is a serious problem\u2014whether submission error or incomplete draft, this must be corrected. Some passages are repetitive (limitations stated multiple times). Abstract is slightly over-dense given length constraints.",
+        "specific_improvement": "Complete the paper\u2014critical sections (results, discussion, conclusions) are missing. Streamline the limitations discussion: acknowledge once thoroughly in the methods section, briefly remind readers in results, but avoid repetition that undermines confidence in the analysis."
+      },
+      "ai_tools_usage": {
+        "score": 17,
+        "strengths": "Transparent disclosure of AI assistance with specific tasks identified. Clear statement that analytical decisions and interpretations are the author's responsibility. Appropriate use for coding and literature organization rather than core intellectual contributions.",
+        "weaknesses": "No discussion of how AI-generated code was validated. The boundary between 'organization' and 'synthesis' for literature review is unclear. No version information for AI tools used.",
+        "specific_improvement": "Add brief notes on AI code validation (e.g., 'API extraction code was validated by manual comparison of 50 randomly selected records'). Clarify the AI role in literature review: did AI identify papers (search), summarize papers (synthesis), or merely organize papers already identified (organization)? These involve different intellectual contributions."
+      }
+    },
+    "priority_revisions": [
+      "Complete the manuscript: The paper is truncated mid-section, missing results presentation, heterogeneity analyses, discussion, policy implications, and conclusions. These are essential components that cannot be evaluated in current form.",
+      "Reframe the identification strategy and estimand: Explicitly acknowledge that you are comparing short-run integration effects (newly integrated) vs. long-run integration effects (established ULS), not integration vs. no integration. This changes the policy interpretation substantially\u2014you're estimating a within-treatment timing comparison, not a treatment vs. control comparison.",
+      "Elevate the selection pattern as the primary finding: The 18.5pp baseline difference and the documentation of non-random early adoption is your most robust finding. Build the discussion around what this tells us about (a) why early regions were selected, (b) implications for interpreting integration effects, and (c) external validity for future ULS evaluations."
+    ],
+    "minor_comments": [
+      "Table 1 should include financial variables (baseline distress levels) for pre-existing ULS to support the selection pattern discussion.",
+      "The hypothesis numbering (1-4) would benefit from clearer linkage to which empirical tests address which hypotheses.",
+      "Consider whether equivalence bounds of \u00b110pp are appropriate\u2014this seems narrow given the 15pp MDE. Justify the bounds theoretically.",
+      "The JEL codes (I18, H51, G33, L22) are appropriate but consider adding C23 (panel data models).",
+      "Abstract mentions 'subgroup analyses by... pre-reform financial health' but this isn't described in the methods section before truncation.",
+      "The coverage of European comparators is geographically limited\u2014consider adding examples from Netherlands (integrated care groups) or Italy (ASL model) if relevant.",
+      "Clarify whether the 'wild cluster bootstrap' uses the 6-point or Rademacher distribution, and whether clustering is at ULS or regional level.",
+      "The statement 'AI did not influence model specification choices' should be verified\u2014was AI ever asked for modeling advice that was then rejected?"
+    ]
+  },
+  {
+    "reviewer": "Reviewer 3: Public Sector Finance (Gemini 2.0)",
+    "recommendation": "ACCEPT_WITH_MAJOR_REVISIONS",
+    "overall_score": 15.75,
+    "summary_assessment": "This is a methodologically sophisticated execution of a fundamentally constrained natural experiment. The author demonstrates high competence in transparency, replicability, and identifying limitations, effectively pivoting the paper from a causal evaluation (which the data cannot support) to a baseline study. However, the severe power limitations and the structural non-comparability of the control group remain significant hurdles for a Q1-level contribution.",
+    "main_contribution": "The paper establishes a rigorous methodological infrastructure for monitoring the 2024 Portuguese healthcare reform and documents a critical selection bias in historical ULS adoption that complicates future causal inference.",
+    "fatal_flaws": [
+      "Statistical power is critically low (25%), rendering the failure to reject the null hypothesis scientifically uninformative rather than evidence of 'no effect'.",
+      "The control group (pre-existing ULS) is not just 'differently treated' but structurally distinct (predominantly rural/low-density), creating a violation of the parallel trends assumption that may not be solvable even with Synthetic Control given the small donor pool."
+    ],
+    "criteria_scores": {
+      "research_question": {
+        "score": 17,
+        "strengths": "Highly policy-relevant and timely. The pivot to 'baseline methods' is a smart strategic adjustment given data constraints.",
+        "weaknesses": "By definition, a 'preliminary evidence' paper lacks the definitive punch required for top-tier publication.",
+        "specific_improvement": "Frame the 'Selection Pattern' of early ULS adopters as a primary finding rather than just a methodological nuisance."
+      },
+      "literature_review": {
+        "score": 16,
+        "strengths": "Excellent integration of Soft Budget Constraint theory with Industrial Organization. Good addition of European comparators.",
+        "weaknesses": "Could better synthesize the specific mechanisms of *why* integration failed to produce savings in the Spanish/Danish examples.",
+        "specific_improvement": "Connect the 'rural' nature of your control group to literature on rural hospital finance specifically."
+      },
+      "theoretical_framework": {
+        "score": 15,
+        "strengths": "Explicit hypotheses with predicted magnitudes are a strong addition. Good use of Kornai.",
+        "weaknesses": "The magnitude predictions (e.g., 10-15% for SBC) feel slightly deterministic given the institutional friction.",
+        "specific_improvement": "Discuss how the 'soft budget constraint' interacts specifically with the 'rural' nature of the control group (e.g., are rural hospitals allowed softer budgets due to political necessity?)."
+      },
+      "methodology_design": {
+        "score": 13,
+        "strengths": "The use of Synthetic Control and Wild Cluster Bootstrap is appropriate and rigorous. The author correctly identifies the flaws.",
+        "weaknesses": "The donor pool for Synthetic Control (n=7) is likely too small and too biased (rural) to create a valid counterfactual for urban treated units.",
+        "specific_improvement": "Report the RMSPE (Root Mean Squared Prediction Error) for the Synthetic Control to quantify fit quality. If the pre-trend fit is poor, the SC results are invalid."
+      },
+      "data_quality": {
+        "score": 18,
+        "strengths": "Exemplary transparency. The use of 'overdue debt ratio' is the correct metric for this context.",
+        "weaknesses": "None significant regarding the data itself, only the availability of post-reform periods.",
+        "specific_improvement": "Ensure the definition of 'overdue' is consistent across the 2014-2025 period (check for accounting rule changes in 2015/2016)."
+      },
+      "empirical_analysis": {
+        "score": 14,
+        "strengths": "Sophisticated handling of standard errors (Wild Bootstrap). Heterogeneity analysis is a crucial addition.",
+        "weaknesses": "Running a regression with 25% power is methodologically risky; it produces 'noisy zeros'. The equivalence testing is a good attempt to mitigate this but doesn't solve the sample size issue.",
+        "specific_improvement": "Conduct a 'falsification test' using random treatment dates prior to 2024 to see if your model falsely detects effects."
+      },
+      "results_interpretation": {
+        "score": 16,
+        "strengths": "Refreshingly honest. Does not overclaim. The discussion of the 'J-curve' is insightful.",
+        "weaknesses": "The interpretation of the null result needs to be even more cautious given the power calculation.",
+        "specific_improvement": "Explicitly state: 'We cannot rule out effects as large as X or as small as Y' based on the confidence intervals."
+      },
+      "replicability": {
+        "score": 20,
+        "strengths": "Gold standard. GitHub repository, data dictionary, and code availability are perfect.",
+        "weaknesses": "None.",
+        "specific_improvement": "None."
+      },
+      "writing_quality": {
+        "score": 18,
+        "strengths": "Clear, concise, and professional. The structure follows standard economic reporting perfectly.",
+        "weaknesses": "None significant.",
+        "specific_improvement": "None."
+      },
+      "ai_tools_usage": {
+        "score": 18,
+        "strengths": "Transparent and appropriate. Used for coding efficiency, not intellectual core.",
+        "weaknesses": "None.",
+        "specific_improvement": "None."
+      }
+    },
+    "priority_revisions": [
+      "Revision 1: Strengthen the Synthetic Control validation. With only 7 donors, you must demonstrate that a valid convex combination actually exists. Show the pre-treatment fit metrics (RMSPE) clearly. If the fit is poor, acknowledge that SC fails.",
+      "Revision 2: Elevate the 'Selection Bias' finding. The fact that early ULS were structurally different (rural/distressed) is a positive empirical finding about political economy, not just a methodological limitation. Analyze *why* these were chosen first.",
+      "Revision 3: Refine the Power Analysis interpretation. Instead of just stating power is low, calculate the 'ex-post Minimum Detectable Effect' (MDE) given your standard errors. Show exactly how massive the effect would have needed to be for you to see it."
+    ],
+    "minor_comments": [
+      "In Table 1, add a column for 'Pre-Reform Debt Ratio' to visualize the baseline imbalance immediately.",
+      "The abstract mentions 'p=0.433'. In the text, avoid focusing on the p-value; focus on the Confidence Interval width.",
+      "Check if the 2015 accounting standard change (SNC-AP) affects the continuity of the 'overdue debt' variable time series.",
+      "The heterogeneity analysis by 'size' is good, but consider 'complexity' (e.g., Case Mix Index) if data is available, as complexity drives the theoretical costs."
+    ]
+  }
+]

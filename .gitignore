@@ -1,0 +1,35 @@
+# Environment
+.env
+.envZone.Identifier
+venv/
+__pycache__/
+*.pyc
+
+# Backup folders
+99_backup/
+99 backup/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.Zone.Identifier
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary
+*.tmp
+*.log
+
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
